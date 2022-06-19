@@ -1,11 +1,6 @@
-// --== CS400 Project One File Header ==--
 // Name: Tom Rosen
 // Email: trrosen @wisc.edu 
-// Team: Blue
-// Group: CI
-// TA: C
-// Lecturer: Florian Heimerl
-// Notes to Grader: <optional extra notes>
+
 
 import java.util.Iterator;
 import java.util.LinkedList;
@@ -18,11 +13,10 @@ import static org.junit.Assert.*;
 
 public class TestRedBlackTree {
 	
-	/**
+    /**
      * Test to make sure the Red Black Tree rotates correctly when the parent node is the root of
      * the tree.
      * 
-     * USES JUNIT
      */
     @Test
     public void testInsertRootBalance()
@@ -55,9 +49,9 @@ public class TestRedBlackTree {
     }
     
     /**
+     *-- JUNIT TEST --
      * Test to make sure the Red Black Tree rotates left correctly.
      * 
-     * USES JUNIT
      */
     @Test
     public void testInsertCase1()
