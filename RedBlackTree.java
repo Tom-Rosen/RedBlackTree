@@ -1,11 +1,6 @@
-// --== CS400 Project One File Header ==--
 // Name: Tom Rosen
 // Email: trrosen @wisc.edu 
-// Team: Blue
-// Group: CI
-// TA: C
-// Lecturer: Florian Heimerl
-// Notes to Grader: <optional extra notes>
+
 
 import java.util.Iterator;
 import java.util.LinkedList;
@@ -18,10 +13,6 @@ import java.util.Stack;
  * Red-Black Tree implementation with a Node inner class for representing
  * the nodes of the tree. Currently, this implements a Binary Search Tree that
  * we will turn into a red black tree by modifying the insert functionality.
- * In this activity, we will start with implementing rotations for the binary
- * search tree insert algorithm. You can use this class' insert method to build
- * a regular binary search tree, and its toString method to display a level-order
- * traversal of the tree.
  */
 public class RedBlackTree<T extends Comparable<T>> implements SortedCollectionInterface<T> {
 
@@ -50,11 +41,7 @@ public class RedBlackTree<T extends Comparable<T>> implements SortedCollectionIn
          * at the current node. The string representations of each data value
          * within this tree are assembled into a comma separated string within
          * brackets (similar to many implementations of java.util.Collection).
-         * Note that the Node's implementation of toString generates a level
-         * order traversal. The toString of the RedBlackTree class below
-         * produces an inorder traversal of the nodes / values of the tree.
-         * This method will be helpful as a helper for the debugging and testing
-         * of your rotation implementation.
+         * 
          * @return string containing the values of this tree in level order
          */
         @Override
@@ -81,6 +68,7 @@ public class RedBlackTree<T extends Comparable<T>> implements SortedCollectionIn
      * data value to a new node in a leaf position within the tree. After  
      * this insertion, no attempt is made to restructure or balance the tree.
      * This tree will not hold null references, nor duplicate data values.
+     *
      * @param data to be added into this binary search tree
      * @return true if the value was inserted, false if not
      * @throws NullPointerException when the provided data argument is null
@@ -112,6 +100,7 @@ public class RedBlackTree<T extends Comparable<T>> implements SortedCollectionIn
      * Recursive helper method to find the subtree with a null reference in the
      * position that the newNode should be inserted, and then extend this tree
      * by the newNode in that position.
+     *
      * @param newNode is the new node that is being added to this tree
      * @param subtree is the reference to a node within this tree which the 
      *      newNode should be inserted as a descenedent beneath
@@ -273,6 +262,7 @@ public class RedBlackTree<T extends Comparable<T>> implements SortedCollectionIn
      * rightChild of the provided parent, this method will perform a left rotation.
      * When the provided nodes are not related in one of these ways, this method
      * will throw an IllegalArgumentException.
+     *
      * @param child is the node being rotated from child to parent position
      *      (between these two node arguments)
      * @param parent is the node being rotated from parent to child position
@@ -281,7 +271,7 @@ public class RedBlackTree<T extends Comparable<T>> implements SortedCollectionIn
      *      node references are not initially (pre-rotation) related that way
      */
     public void rotate(Node<T> child, Node<T> parent) throws IllegalArgumentException {
-        // TODO: Implement this method.
+     
     	if(child == null || parent == null)
     	{
     		throw new IllegalArgumentException("ERROR: One of the nodes was null.");
@@ -348,17 +338,6 @@ public class RedBlackTree<T extends Comparable<T>> implements SortedCollectionIn
     	
     }
 
-    // Add at least 3 JUnit5 test methods with the test annotation similar to
-    // the one from the comment below. You can use your notes from lecture for
-    // ideas on concrete examples of rotation to test for. Make sure to include
-    // rotations within and at the root of a tree in your test cases.
-	/*
-    @Test
-	public void test1() {
-		fail("This test has not been implemented.");		
-	}
-    */
-
     /**
      * Get the size of the tree (its number of nodes).
      * @return the number of nodes in the tree
@@ -424,12 +403,9 @@ public class RedBlackTree<T extends Comparable<T>> implements SortedCollectionIn
      */
     @Override
     public Iterator<T> iterator() {
-        // use an anonymous class here that implements the Iterator interface
-        // we create a new on-off object of this class everytime the iterator
-        // method is called
+
         return new Iterator<T>() {
-            // a stack and current reference store the progress of the traversal
-            // so that we can return one value at a time with the Iterator
+
             Stack<Node<T>> stack = null;
             Node<T> current = root;
 
